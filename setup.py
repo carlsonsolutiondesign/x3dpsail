@@ -12,7 +12,7 @@ setuptools.setup(
      description="X3D Python Scene Access Interface Library (X3DPSAIL)",
      long_description=long_description,
    long_description_content_type="text/markdown",
-     url="https://github.com/coderextreme/x3dpsail",
+     url="https://github.com/carlsonsolutiondesign/x3dpsail",
      packages=setuptools.find_packages(),
      classifiers=[
          "Programming Language :: Python :: 3",
