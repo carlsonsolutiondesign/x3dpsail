@@ -8,7 +8,7 @@ setuptools.setup(
      version='0.1',
      scripts=['x3dpsail'] ,
      author="John W Carlson",
-     author_email="john.carlson3@sbcglobal.net",
+     author_email="yottzumm@gmail.com",
      description="X3D Python Scene Access Interface Library (X3DPSAIL)",
      long_description=long_description,
    long_description_content_type="text/markdown",
