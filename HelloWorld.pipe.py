@@ -1,6 +1,3 @@
-import jnius_config
-jnius_config.set_classpath('.', '../../../jars/X3DJSAIL.3.3.full.jar')
-from jnius import autoclass
 from X3Dpackage import *
 X3D0 = (X3D() 
    .setProfile("Immersive") 
