@@ -1,5 +1,5 @@
 import jnius_config
-jnius_config.set_classpath('.', './X3DJSAIL.3.3.full.jar', 'c:/x3d-code/www.web3d.org/x3d/stylesheets/java/jars/X3DJSAIL.3.3.full.jar', '../../../jars/X3DJSAIL.3.3.full.jar')
+jnius_config.set_classpath('./X3DJSAIL.3.3.full.jar')
 from jnius import autoclass
 CommentsBlock = autoclass('org.web3d.x3d.jsail.Core.CommentsBlock')
 Anchor = autoclass('org.web3d.x3d.jsail.Networking.AnchorObject')
