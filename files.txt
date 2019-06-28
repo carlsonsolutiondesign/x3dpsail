@@ -1,0 +1,3 @@
+..\Anaconda3\lib\site-packages\x3dpsail-0.3-py3.7.egg
+..\Anaconda3\Scripts\x3dpsail
+..\Anaconda3\Scripts\x3dpsail.py

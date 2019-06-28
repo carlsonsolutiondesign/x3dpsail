@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
      name='x3dpsail',  
-     version='0.1',
+     version='0.3',
      scripts=['x3dpsail'] ,
      author="John W Carlson",
      author_email="yottzumm@gmail.com",
