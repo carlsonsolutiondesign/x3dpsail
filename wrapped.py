@@ -1,6 +1,5 @@
-import x3dpsail
+import minimal
 
-(x3dpsail.ProtoBody()
-    .addChild(x3dpsail.TouchSensor()
-      .setIS(x3dpsail.IS()
-        .addConnect(x3dpsail.connect()))))
+(minimal.ProtoBodyObject()
+    .addChild(minimal.TouchSensorObject()
+        .setIS(minimal.ISObject())))
