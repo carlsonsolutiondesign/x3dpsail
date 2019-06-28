@@ -28,7 +28,7 @@ X3D0 = (x3dpsail.X3D().setProfile(x3dpsail.SFString("Immersive")).setVersion(x3d
         .addMeta(x3dpsail.meta().setContent(x3dpsail.SFString("http://www.web3d.org/specifications/java/X3DJSAIL.html")).setName(x3dpsail.SFString("reference")))
         .addMeta(x3dpsail.meta().setContent(x3dpsail.SFString("HelloWorldProgramOutput.java")).setName(x3dpsail.SFString("generator")))
         .addMeta(x3dpsail.meta().setContent(x3dpsail.SFString("6 September 2016")).setName(x3dpsail.SFString("created")))
-        .addMeta(x3dpsail.meta().setContent(x3dpsail.SFString("28 June 2019")).setName(x3dpsail.SFString("modified")))
+        .addMeta(x3dpsail.meta().setContent(x3dpsail.SFString("19 June 2019")).setName(x3dpsail.SFString("modified")))
         .addMeta(x3dpsail.meta().setContent(x3dpsail.SFString("X3D Java Scene Access Interface Library (X3DJSAIL)")).setName(x3dpsail.SFString("generator")))
         .addMeta(x3dpsail.meta().setContent(x3dpsail.SFString("http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java")).setName(x3dpsail.SFString("generator")))
         .addMeta(x3dpsail.meta().setContent(x3dpsail.SFString("Netbeans http://www.netbeans.org")).setName(x3dpsail.SFString("generator")))

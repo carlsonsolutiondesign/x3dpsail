@@ -11,48 +11,48 @@ head1 = head()
 # comment #4 
 
 component2 = component()
-component2.name = "Navigation"
 component2.level = 3
+component2.name = "Navigation"
 head1.addComponent([component2])
 
 component3 = component()
-component3.name = "Layering"
 component3.level = 1
+component3.name = "Layering"
 head1.addComponent([component3])
 
 component4 = component()
-component4.name = "Shaders"
 component4.level = 1
+component4.name = "Shaders"
 head1.addComponent([component4])
 
 component5 = component()
-component5.name = "CADGeometry"
 component5.level = 2
+component5.name = "CADGeometry"
 head1.addComponent([component5])
 
 component6 = component()
-component6.name = "DIS"
 component6.level = 2
+component6.name = "DIS"
 head1.addComponent([component6])
 
 component7 = component()
-component7.name = "H-Anim"
 component7.level = 1
+component7.name = "H-Anim"
 head1.addComponent([component7])
 
 unit8 = unit(category = "angle")
-unit8.name = "AngleUnitConversion"
 unit8.conversionFactor = 1.0
+unit8.name = "AngleUnitConversion"
 head1.addUnit([unit8])
 
 unit9 = unit(category = "length")
-unit9.name = "LengthUnitConversion"
 unit9.conversionFactor = 1.0
+unit9.name = "LengthUnitConversion"
 head1.addUnit([unit9])
 
 unit10 = unit(category = "force")
-unit10.name = "ForceFromPoundsToNewtons"
 unit10.conversionFactor = 4.4482
+unit10.name = "ForceFromPoundsToNewtons"
 head1.addUnit([unit10])
 
 meta11 = meta()
@@ -168,15 +168,13 @@ ViewpointGroup32.addChildren([Viewpoint33])
 
 Viewpoint34 = Viewpoint()
 Viewpoint34.DEF = "TopDownView"
-Viewpoint34.description = "top-down view from above"
-Viewpoint34.orientation = [1,0,0,-1.570796]
 Viewpoint34.position = [0,100,0]
+Viewpoint34.orientation = [1,0,0,-1.570796]
+Viewpoint34.description = "top-down view from above"
 ViewpointGroup32.addChildren([Viewpoint34])
-Scene31.addChildren([ViewpointGroup32])
+Scene31.children = ViewpointGroup32
 
 NavigationInfo35 = NavigationInfo()
-NavigationInfo35.avatarSize = [0.25,1.6,0.75]
-NavigationInfo35.transitionType = ["LINEAR"]
 NavigationInfo35.type = ["EXAMINE","FLY","ANY"]
 Scene31.addChildren([NavigationInfo35])
 
@@ -195,13 +193,13 @@ Scene31.addChildren([WorldInfo38])
 
 MetadataString39 = MetadataString()
 MetadataString39.DEF = "scene.addChildMetadata"
-MetadataString39.name = "test"
 MetadataString39.value = ["Top-level root Metadata node beneath Scene needs to be one of '-children' in JSON encoding"]
-Scene31.addChildren([MetadataString39])
+MetadataString39.name = "test"
+Scene31.metadata = MetadataString39
 
-LayerSet40 = LayerSet(order = [0])
+LayerSet40 = LayerSet()
 LayerSet40.DEF = "scene.addChildLayerSetTest"
-Scene31.addLayerSet([LayerSet40])
+Scene31.children = LayerSet40
 
 Transform41 = Transform()
 Transform41.DEF = "LogoGeometryTransform"
@@ -219,8 +217,8 @@ Appearance44 = Appearance()
 Material45 = Material()
 Material45.DEF = "GreenMaterial"
 Material45.diffuseColor = [0,1,1]
-Material45.emissiveColor = [0.8,0,0]
 Material45.transparency = 0.1
+Material45.emissiveColor = [0.8,0,0]
 Appearance44.material = Material45
 
 ImageTexture46 = ImageTexture()
@@ -303,17 +301,17 @@ MetadataSet62 = MetadataSet()
 MetadataSet62.name = "EscapedQuotationMarksMetadataSet"
 
 MetadataString63 = MetadataString()
-MetadataString63.name = "quotesTestC"
 MetadataString63.value = ["MFString example C, backslash-escaped quotes: He said, \"Immel did it!\""]
+MetadataString63.name = "quotesTestC"
 MetadataSet62.value = MetadataString63
 
 MetadataString64 = MetadataString()
-MetadataString64.name = "extraChildTest"
 MetadataString64.value = ["checks MetadataSetObject addValue() method"]
+MetadataString64.name = "extraChildTest"
 MetadataSet62.value = MetadataString64
 Text61.metadata = MetadataSet62
 
-FontStyle65 = FontStyle(family = ["SERIF"], justify = ["MIDDLE","MIDDLE"])
+FontStyle65 = FontStyle(justify = ["MIDDLE","MIDDLE"])
 Text61.fontStyle = FontStyle65
 Shape58.geometry = Text61
 Transform57.addChildren([Shape58])
@@ -376,14 +374,14 @@ Script75 = Script()
 Script75.DEF = "colorTypeConversionScript"
 
 field76 = field()
-field76.name = "colorInput"
 field76.accessType = "inputOnly"
+field76.name = "colorInput"
 field76.type = "SFColor"
 Script75.addField([field76])
 
 field77 = field()
-field77.name = "colorsOutput"
 field77.accessType = "outputOnly"
+field77.name = "colorsOutput"
 field77.type = "MFColor"
 Script75.addField([field77])
 
@@ -434,22 +432,22 @@ Group73.addChildren([ROUTE82])
 Scene31.addChildren([Group73])
 
 ProtoDeclare83 = ProtoDeclare()
-ProtoDeclare83.name = "ArtDeco01Material"
 ProtoDeclare83.appinfo = "tooltip: ArtDeco01Material prototype is a Material node"
+ProtoDeclare83.name = "ArtDeco01Material"
 
 ProtoInterface84 = ProtoInterface()
 
 field85 = field()
-field85.name = "description"
 field85.accessType = "inputOutput"
 field85.appinfo = "tooltip for descriptionField"
+field85.name = "description"
 field85.type = "SFString"
 field85.value = "ArtDeco01Material prototype is a Material node"
 ProtoInterface84.addField([field85])
 
 field86 = field()
-field86.name = "enabled"
 field86.accessType = "inputOutput"
+field86.name = "enabled"
 field86.type = "SFBool"
 field86.value = "true"
 ProtoInterface84.addField([field86])
@@ -459,10 +457,10 @@ ProtoBody87 = ProtoBody()
 # Initial node of ProtoBody determines prototype node type 
 
 Material88 = Material()
-Material88.ambientIntensity = 0.25
-Material88.diffuseColor = [0.282435,0.085159,0.134462]
 Material88.shininess = 0.127273
+Material88.ambientIntensity = 0.25
 Material88.specularColor = [0.276305,0.11431,0.139857]
+Material88.diffuseColor = [0.282435,0.085159,0.134462]
 ProtoBody87.addChildren([Material88])
 # [HelloWorldProgram diagnostic] should be connected to scene graph: artDeco01ProtoDeclare.getNodeType()=\"Material\" 
 # presence of follow-on TouchSensor shows that additional nodes are allowed in ProtoBody after initial node, regardless of node types 
@@ -487,15 +485,15 @@ ProtoDeclare83.protoBody = ProtoBody87
 Scene31.addChildren([ProtoDeclare83])
 
 ExternProtoDeclare93 = ExternProtoDeclare()
-ExternProtoDeclare93.name = "ArtDeco02Material"
 ExternProtoDeclare93.appinfo = "this is a different Material node"
+ExternProtoDeclare93.name = "ArtDeco02Material"
 ExternProtoDeclare93.url = ["http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"]
 # [HelloWorldProgram diagnostic] artDeco02ExternProtoDeclare.getNodeType()=\"ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time. TODO X3DJSAIL needs to add further capability that retrieves the ExternProtoDeclare file.\" 
 
 field94 = field()
-field94.name = "description"
 field94.accessType = "inputOutput"
 field94.appinfo = "tooltip for descriptionField"
+field94.name = "description"
 field94.type = "SFString"
 ExternProtoDeclare93.addField([field94])
 Scene31.addChildren([ExternProtoDeclare93])
@@ -568,68 +566,68 @@ Inline109.url = ["someOtherScene.x3d","http://www.web3d.org/specifications/java/
 Scene31.addChildren([Inline109])
 
 IMPORT110 = IMPORT()
-IMPORT110.AS = "WorldInfoDEF2"
 IMPORT110.importedDEF = "WorldInfoDEF"
 IMPORT110.inlineDEF = "inlineSceneDef"
+IMPORT110.AS = "WorldInfoDEF2"
 Scene31.addChildren([IMPORT110])
 
 EXPORT111 = EXPORT()
-EXPORT111.AS = "WorldInfoDEF3"
 EXPORT111.localDEF = "WorldInfoDEF"
+EXPORT111.AS = "WorldInfoDEF3"
 Scene31.addChildren([EXPORT111])
 
 ProtoDeclare112 = ProtoDeclare()
-ProtoDeclare112.name = "MaterialModulator"
 ProtoDeclare112.appinfo = "mimic a Material node and modulate fields as an animation effect"
+ProtoDeclare112.name = "MaterialModulator"
 ProtoDeclare112.documentation = "http://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html"
 
 ProtoInterface113 = ProtoInterface()
 
 field114 = field()
-field114.name = "enabled"
 field114.accessType = "inputOutput"
+field114.name = "enabled"
 field114.type = "SFBool"
 field114.value = "true"
 ProtoInterface113.addField([field114])
 
 field115 = field()
-field115.name = "diffuseColor"
 field115.accessType = "inputOutput"
+field115.name = "diffuseColor"
 field115.type = "SFColor"
 field115.value = "0 0 0"
 ProtoInterface113.addField([field115])
 
 field116 = field()
-field116.name = "emissiveColor"
 field116.accessType = "inputOutput"
+field116.name = "emissiveColor"
 field116.type = "SFColor"
 field116.value = "0.05 0.05 0.5"
 ProtoInterface113.addField([field116])
 
 field117 = field()
-field117.name = "specularColor"
 field117.accessType = "inputOutput"
+field117.name = "specularColor"
 field117.type = "SFColor"
 field117.value = "0 0 0"
 ProtoInterface113.addField([field117])
 
 field118 = field()
-field118.name = "transparency"
 field118.accessType = "inputOutput"
+field118.name = "transparency"
 field118.type = "SFFloat"
 field118.value = "0.0"
 ProtoInterface113.addField([field118])
 
 field119 = field()
-field119.name = "shininess"
 field119.accessType = "inputOutput"
+field119.name = "shininess"
 field119.type = "SFFloat"
 field119.value = "0.0"
 ProtoInterface113.addField([field119])
 
 field120 = field()
-field120.name = "ambientIntensity"
 field120.accessType = "inputOutput"
+field120.name = "ambientIntensity"
 field120.type = "SFFloat"
 field120.value = "0.0"
 ProtoInterface113.addField([field120])
@@ -679,26 +677,26 @@ Script130 = Script()
 Script130.DEF = "MaterialModulatorScript"
 
 field131 = field()
-field131.name = "enabled"
 field131.accessType = "inputOutput"
+field131.name = "enabled"
 field131.type = "SFBool"
 Script130.addField([field131])
 
 field132 = field()
-field132.name = "diffuseColor"
 field132.accessType = "inputOutput"
+field132.name = "diffuseColor"
 field132.type = "SFColor"
 Script130.addField([field132])
 
 field133 = field()
-field133.name = "newColor"
 field133.accessType = "outputOnly"
+field133.name = "newColor"
 field133.type = "SFColor"
 Script130.addField([field133])
 
 field134 = field()
-field134.name = "clockTrigger"
 field134.accessType = "inputOnly"
+field134.name = "clockTrigger"
 field134.type = "SFTime"
 Script130.addField([field134])
 
@@ -752,8 +750,8 @@ Shape139 = Shape()
 
 MetadataString140 = MetadataString()
 MetadataString140.DEF = "FindableMetadataStringTest"
-MetadataString140.name = "findThisNameValue"
 MetadataString140.value = ["test case"]
+MetadataString140.name = "findThisNameValue"
 Shape139.metadata = MetadataString140
 
 Appearance141 = Appearance()
@@ -766,7 +764,7 @@ ProtoInstance142.name = "MaterialModulator"
 Appearance141.material = ProtoInstance142
 Shape139.appearance = Appearance141
 
-Cone143 = Cone(bottom = False, bottomRadius = 0.05, height = 0.1)
+Cone143 = Cone(bottomRadius = 0.05, height = 0.1, bottom = False)
 Shape139.geometry = Cone143
 Group138.addChildren([Shape139])
 # Test success: declarativeGroup.addChild() singleton pipeline method 
@@ -846,8 +844,8 @@ ProtoDeclare154.name = "NewWorldInfo"
 ProtoInterface155 = ProtoInterface()
 
 field156 = field()
-field156.name = "description"
 field156.accessType = "initializeOnly"
+field156.name = "description"
 field156.type = "SFString"
 ProtoInterface155.addField([field156])
 ProtoDeclare154.protoInterface = ProtoInterface155
@@ -892,7 +890,7 @@ ProtoDeclare164.name = "ShaderProto"
 ProtoBody165 = ProtoBody()
 
 ProgramShader166 = ProgramShader()
-ProtoBody165.addChildren([ProgramShader166])
+ProtoBody165.shaders = ProgramShader166
 ProtoDeclare164.protoBody = ProtoBody165
 Scene31.addChildren([ProtoDeclare164])
 
@@ -907,8 +905,8 @@ ProgramShader169.DEF = "TestShader1"
 
 ShaderProgram170 = ShaderProgram()
 ShaderProgram170.DEF = "TestShader2"
-ProgramShader169.addPrograms([ShaderProgram170])
-Appearance168.addShaders([ProgramShader169])
+ProgramShader169.programs = ShaderProgram170
+Appearance168.shaders = ProgramShader169
 
 ProtoInstance171 = ProtoInstance()
 ProtoInstance171.DEF = "TestShader3"
@@ -920,8 +918,8 @@ ComposedShader172.DEF = "TestShader4"
 
 ShaderPart173 = ShaderPart()
 ShaderPart173.DEF = "TestShader5"
-ComposedShader172.addParts([ShaderPart173])
-Appearance168.addShaders([ComposedShader172])
+ComposedShader172.parts = ShaderPart173
+Appearance168.shaders = ComposedShader172
 Shape167.appearance = Appearance168
 Scene31.addChildren([Shape167])
 
@@ -940,28 +938,31 @@ CADAssembly176.addChildren([CADPart177])
 CADLayer175.addChildren([CADAssembly176])
 Transform174.addChildren([CADLayer175])
 
-EspduTransform179 = EspduTransform(geoSystem = ["GD","WE"])
-Transform174.addChildren([EspduTransform179])
+EspduTransform179 = EspduTransform()
+Transform174.children = EspduTransform179
 
-ReceiverPdu180 = ReceiverPdu(geoSystem = ["GD","WE"])
-Transform174.addChildren([ReceiverPdu180])
+ReceiverPdu180 = ReceiverPdu()
+ReceiverPdu180.receivedPower = 0.0
+Transform174.children = ReceiverPdu180
 
-SignalPdu181 = SignalPdu(geoSystem = ["GD","WE"])
-Transform174.addChildren([SignalPdu181])
+SignalPdu181 = SignalPdu()
+Transform174.children = SignalPdu181
 
-TransmitterPdu182 = TransmitterPdu(geoSystem = ["GD","WE"])
-Transform174.addChildren([TransmitterPdu182])
+TransmitterPdu182 = TransmitterPdu()
+TransmitterPdu182.relativeAntennaLocation = [0,0,0]
+TransmitterPdu182.transmitFrequencyBandwidth = 0.0
+Transform174.children = TransmitterPdu182
 
 DISEntityManager183 = DISEntityManager()
 
 DISEntityTypeMapping184 = DISEntityTypeMapping()
 DISEntityManager183.addMapping([DISEntityTypeMapping184])
-Transform174.addChildren([DISEntityManager183])
+Transform174.children = DISEntityManager183
 
 HAnimHumanoid185 = HAnimHumanoid()
 HAnimHumanoid185.DEF = "TestHumanoidDEF"
-HAnimHumanoid185.name = "TestHumanoid"
 HAnimHumanoid185.version = "2.0"
+HAnimHumanoid185.name = "TestHumanoid"
 Transform174.addChildren([HAnimHumanoid185])
 Scene31.addChildren([Transform174])
 X3D0.scene = Scene31

@@ -21,7 +21,7 @@ meta4.name = "created"
 head1.addMeta([meta4])
 
 meta5 = meta()
-meta5.content = "14 April 2017"
+meta5.content = "28 July 2015"
 meta5.name = "modified"
 head1.addMeta([meta5])
 
@@ -125,62 +125,58 @@ X3D0.head = head1
 Scene25 = Scene()
 # Example scene to illustrate X3D nodes and fields (XML elements and attributes) 
 
-WorldInfo26 = WorldInfo()
-WorldInfo26.title = "Hello world!"
-Scene25.addChildren([WorldInfo26])
+Group26 = Group()
 
-Group27 = Group()
+Viewpoint27 = Viewpoint()
+Viewpoint27.DEF = "ViewUpClose"
+Viewpoint27.centerOfRotation = [0,-1,0]
+Viewpoint27.description = "Hello world!"
+Viewpoint27.position = [0,-1,7]
+Group26.addChildren([Viewpoint27])
 
-Viewpoint28 = Viewpoint()
-Viewpoint28.DEF = "ViewUpClose"
-Viewpoint28.centerOfRotation = [0,-1,0]
-Viewpoint28.description = "Hello world!"
-Viewpoint28.position = [0,-1,7]
-Group27.addChildren([Viewpoint28])
+Transform28 = Transform()
+Transform28.rotation = [0,1,0,3]
 
-Transform29 = Transform()
-Transform29.rotation = [0,1,0,3]
+Shape29 = Shape()
 
-Shape30 = Shape()
+Sphere30 = Sphere()
+Shape29.geometry = Sphere30
 
-Sphere31 = Sphere()
-Shape30.geometry = Sphere31
+Appearance31 = Appearance()
 
-Appearance32 = Appearance()
+Material32 = Material()
+Material32.DEF = "MaterialLightBlue"
+Material32.diffuseColor = [0.1,0.5,1]
+Appearance31.material = Material32
 
-Material33 = Material()
-Material33.DEF = "MaterialLightBlue"
-Material33.diffuseColor = [0.1,0.5,1]
-Appearance32.material = Material33
+ImageTexture33 = ImageTexture()
+ImageTexture33.DEF = "ImageCloudlessEarth"
+ImageTexture33.url = ["earth-topo.png","earth-topo.jpg","earth-topo-small.gif","http://www.web3d.org/x3d/content/examples/Basic/earth-topo.png","http://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg","http://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"]
+Appearance31.texture = ImageTexture33
+Shape29.appearance = Appearance31
+Transform28.addChildren([Shape29])
+Group26.addChildren([Transform28])
 
-ImageTexture34 = ImageTexture()
-ImageTexture34.DEF = "ImageCloudlessEarth"
-ImageTexture34.url = ["earth-topo.png","earth-topo.jpg","earth-topo-small.gif","http://www.web3d.org/x3d/content/examples/Basic/earth-topo.png","http://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg","http://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"]
-Appearance32.texture = ImageTexture34
-Shape30.appearance = Appearance32
-Transform29.addChildren([Shape30])
-Group27.addChildren([Transform29])
+Transform34 = Transform()
+Transform34.translation = [0,-2,0]
 
-Transform35 = Transform()
-Transform35.translation = [0,-2,0]
+Shape35 = Shape()
 
-Shape36 = Shape()
+Text36 = Text()
+Text36.DEF = "TextMessage"
+Text36.string = ["Hello","world!"]
 
-Text37 = Text()
-Text37.DEF = "TextMessage"
-Text37.string = ["Hello","world!"]
+FontStyle37 = FontStyle(justify = ["MIDDLE","MIDDLE"])
+Text36.fontStyle = FontStyle37
+Shape35.geometry = Text36
 
-FontStyle38 = FontStyle(justify = ["MIDDLE","MIDDLE"])
-Text37.fontStyle = FontStyle38
-Shape36.geometry = Text37
+Appearance38 = Appearance()
 
-Appearance39 = Appearance()
-
-Material40 = Material()
-Material40.USE = "MaterialLightBlue"
-Appearance39.material = Material40
-Shape36.appearance = Appearance39
-Transform35.addChildren([Shape36])
-Group27.addChildren([Transform35])
-Scene25.addChildren([Group27])
+Material39 = Material()
+Material39.USE = "MaterialLightBlue"
+Appearance38.material = Material39
+Shape35.appearance = Appearance38
+Transform34.addChildren([Shape35])
+Group26.addChildren([Transform34])
+Scene25.addChildren([Group26])
 X3D0.scene = Scene25
