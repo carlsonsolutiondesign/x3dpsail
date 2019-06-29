@@ -892,7 +892,7 @@ ProtoDeclare164.name = "ShaderProto"
 ProtoBody165 = ProtoBody()
 
 ProgramShader166 = ProgramShader()
-ProtoBody165.addChildren([ProgramShader166])
+ProtoBody165.addShaders([ProgramShader166])
 ProtoDeclare164.protoBody = ProtoBody165
 Scene31.addChildren([ProtoDeclare164])
 

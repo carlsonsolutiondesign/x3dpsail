@@ -6,7 +6,7 @@ X3D0 = (x3dpsail.X3D().setProfile(x3dpsail.SFString("Immersive")).setVersion(x3d
         .addMeta(x3dpsail.meta().setContent(x3dpsail.SFString("HelloWorld.x3d")).setName(x3dpsail.SFString("title")))
         .addMeta(x3dpsail.meta().setContent(x3dpsail.SFString("Simple X3D scene example: Hello World!")).setName(x3dpsail.SFString("description")))
         .addMeta(x3dpsail.meta().setContent(x3dpsail.SFString("30 October 2000")).setName(x3dpsail.SFString("created")))
-        .addMeta(x3dpsail.meta().setContent(x3dpsail.SFString("28 July 2015")).setName(x3dpsail.SFString("modified")))
+        .addMeta(x3dpsail.meta().setContent(x3dpsail.SFString("14 April 2017")).setName(x3dpsail.SFString("modified")))
         .addMeta(x3dpsail.meta().setContent(x3dpsail.SFString("Don Brutzman")).setName(x3dpsail.SFString("creator")))
         .addMeta(x3dpsail.meta().setContent(x3dpsail.SFString("HelloWorld.tall.png")).setName(x3dpsail.SFString("Image")))
         .addMeta(x3dpsail.meta().setContent(x3dpsail.SFString("http://en.wikipedia.org/wiki/Hello_world")).setName(x3dpsail.SFString("reference")))
@@ -31,6 +31,7 @@ X3D0 = (x3dpsail.X3D().setProfile(x3dpsail.SFString("Immersive")).setVersion(x3d
       .setScene(x3dpsail.Scene()
         # Example scene to illustrate X3D nodes and fields (XML elements and attributes) 
 
+        .addChild(x3dpsail.WorldInfo().setTitle(x3dpsail.SFString("Hello world!")))
         .addChild(x3dpsail.Group()
           .addChild(x3dpsail.Viewpoint().setDEF(x3dpsail.SFString("ViewUpClose")).setCenterOfRotation(x3dpsail.SFVec3f(0,-1,0)).setDescription(x3dpsail.SFString("Hello world!")).setPosition(x3dpsail.SFVec3f(0,-1,7)))
           .addChild(x3dpsail.Transform().setRotation(x3dpsail.SFRotation(0,1,0,3))

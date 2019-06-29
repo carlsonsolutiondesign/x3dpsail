@@ -45,7 +45,7 @@ X3D0 = (x3dpsail.X3D().setProfile(x3dpsail.SFString("Immersive")).setVersion(x3d
         .addChild(x3dpsail.WorldInfo().setDEF(x3dpsail.SFString("WorldInfoDEF")).setTitle(x3dpsail.SFString("HelloWorldProgram produced by X3D Java SAI Library (X3DJSAIL)")))
         .addChild(x3dpsail.WorldInfo().setUSE(x3dpsail.SFString("WorldInfoDEF")))
         .addChild(x3dpsail.WorldInfo().setUSE(x3dpsail.SFString("WorldInfoDEF")))
-        .addMetadata(x3dpsail.MetadataString().setDEF(x3dpsail.SFString("scene.addChildMetadata")).setName(x3dpsail.SFString("test")).setValue(x3dpsail.MFString(["Top-level root Metadata node beneath Scene needs to be one of '-children' in JSON encoding"])))
+        .addChild(x3dpsail.MetadataString().setDEF(x3dpsail.SFString("scene.addChildMetadata")).setName(x3dpsail.SFString("test")).setValue(x3dpsail.MFString(["Top-level root Metadata node beneath Scene needs to be one of '-children' in JSON encoding"])))
         .addLayerSet(x3dpsail.LayerSet().setDEF(x3dpsail.SFString("scene.addChildLayerSetTest")).setOrder(x3dpsail.MFInt32([0])))
         .addChild(x3dpsail.Transform().setDEF(x3dpsail.SFString("LogoGeometryTransform")).setTranslation(x3dpsail.SFVec3f(0,1.5,0))
           .addChild(x3dpsail.Anchor().setDescription(x3dpsail.SFString("select for X3D Java SAI Library (X3DJSAIL) description")).setUrl(x3dpsail.MFString(["../X3DJSAIL.html","http://www.web3d.org/specifications/java/X3DJSAIL.html"]))

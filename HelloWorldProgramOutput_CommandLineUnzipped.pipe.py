@@ -1,242 +1,119 @@
-import jnius_config
-jnius_config.set_classpath('.', '../../../jars/X3DJSAIL.3.3.full.jar')
-from jnius import autoclass
-from X3Dpackage import *
-X3D0 = (X3D() 
-   .setProfile("Immersive") 
-   .setVersion("3.3") 
-# x3dVersionComparisonTest for this model: supportsX3dVersion(X3DObject.VERSION_3_0)=true 
-   .setHead(head()# comment #1 
-# comment #2 
-# comment #3 
-# comment #4 
-    .addComponent(component()     .setName("Navigation") 
-     .setLevel(3) 
-    ) 
-    .addComponent(component()     .setName("Layering") 
-     .setLevel(1) 
-    ) 
-    .addComponent(component()     .setName("Shaders") 
-     .setLevel(1) 
-    ) 
-    .addComponent(component()     .setName("CADGeometry") 
-     .setLevel(2) 
-    ) 
-    .addComponent(component()     .setName("DIS") 
-     .setLevel(2) 
-    ) 
-    .addComponent(component()     .setName("H-Anim") 
-     .setLevel(1) 
-    ) 
-    .addUnit(unit()     .setName("AngleUnitConversion") 
-     .setConversionFactor(1.0) 
-    ) 
-    .addUnit(unit()     .setName("LengthUnitConversion") 
-     .setConversionFactor(1.0) 
-    ) 
-    .addUnit(unit()     .setName("ForceFromPoundsToNewtons") 
-     .setConversionFactor(4.4482) 
-    ) 
-    .addMeta(meta()     .setContent("HelloWorldProgramOutput.x3d") 
-     .setName("title") 
-    ) 
-    .addMeta(meta()     .setContent("continued development and testing in progress") 
-     .setName("info") 
-    ) 
-    .addMeta(meta()     .setContent("Example HelloWorldProgram creates an X3D model using the X3D Java Scene Access Interface Library (X3DJSAIL)") 
-     .setName("description") 
-    ) 
-    .addMeta(meta()     .setContent("http://www.web3d.org/specifications/java/X3DJSAIL.html") 
-     .setName("reference") 
-    ) 
-    .addMeta(meta()     .setContent("HelloWorldProgramOutput.java") 
-     .setName("generator") 
-    ) 
-    .addMeta(meta()     .setContent("6 September 2016") 
-     .setName("created") 
-    ) 
-    .addMeta(meta()     .setContent("19 June 2019") 
-     .setName("modified") 
-    ) 
-    .addMeta(meta()     .setContent("X3D Java Scene Access Interface Library (X3DJSAIL)") 
-     .setName("generator") 
-    ) 
-    .addMeta(meta()     .setContent("http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java") 
-     .setName("generator") 
-    ) 
-    .addMeta(meta()     .setContent("Netbeans http://www.netbeans.org") 
-     .setName("generator") 
-    ) 
-    .addMeta(meta()     .setContent("Don Brutzman") 
-     .setName("creator") 
-    ) 
-    .addMeta(meta()     .setContent("https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/java/examples/HelloWorldProgramOutput.x3d") 
-     .setName("reference") 
-    ) 
-    .addMeta(meta()     .setContent("Console output, ClassicVRML encoding, VRML97 encoding and pretty-print documentation:") 
-     .setName("reference") 
-    ) 
-    .addMeta(meta()     .setContent("HelloWorldProgramOutput.txt") 
-     .setName("reference") 
-    ) 
-    .addMeta(meta()     .setContent("HelloWorldProgramOutput.x3dv") 
-     .setName("reference") 
-    ) 
-    .addMeta(meta()     .setContent("HelloWorldProgramOutput.wrl") 
-     .setName("reference") 
-    ) 
-    .addMeta(meta()     .setContent("HelloWorldProgramOutput.html") 
-     .setName("reference") 
-    ) 
-    .addMeta(meta()     .setContent("https://savage.nps.edu/X3dValidator?url=http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d") 
-     .setName("reference") 
-    ) 
-    .addMeta(meta()     .setContent("http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d") 
-     .setName("identifier") 
-    ) 
-    .addMeta(meta()     .setContent("../license.html") 
-     .setName("license") 
-    ) 
-   ) 
-   .setScene(Scene()    .addChildren([ViewpointGroup()     .setDescription("Available viewpoints") 
-     .addChildren([Viewpoint()      .setDEF("DefaultView") 
-      .setDescription("Hello X3DJSAIL") 
-]     ) 
-     .addChildren([Viewpoint()      .setDEF("TopDownView") 
-      .setDescription("top-down view from above") 
-      .setOrientation([1,0,0,-1.570796]) 
-      .setPosition([0,100,0]) 
-]     ) 
-]    ) 
-    .addChildren([NavigationInfo()     .setAvatarSize([0.25,1.6,0.75]) 
-     .setTransitionType(["LINEAR"]) 
-     .setType(["EXAMINE","FLY","ANY"]) 
-]    ) 
-    .addChildren([WorldInfo()     .setDEF("WorldInfoDEF") 
-     .setTitle("HelloWorldProgram produced by X3D Java SAI Library (X3DJSAIL)") 
-]    ) 
-    .addChildren([WorldInfo()     .setUSE("WorldInfoDEF") 
-]    ) 
-    .addChildren([WorldInfo()     .setUSE("WorldInfoDEF") 
-]    ) 
-    .addChildren([MetadataString()     .setDEF("scene.addChildMetadata") 
-     .setName("test") 
-     .setValue(["Top-level root Metadata node beneath Scene needs to be one of '-children' in JSON encoding"]) 
-]    ) 
-    .addLayerSet(LayerSet()     .setDEF("scene.addChildLayerSetTest") 
-     .setOrder([0]) 
-    ) 
-    .addChildren([Transform()     .setDEF("LogoGeometryTransform") 
-     .setTranslation([0,1.5,0]) 
-     .addChildren([Anchor()      .setDescription("select for X3D Java SAI Library (X3DJSAIL) description") 
-      .setUrl(["../X3DJSAIL.html","http://www.web3d.org/specifications/java/X3DJSAIL.html"]) 
-      .addChildren([Shape()       .setDEF("BoxShape") 
-       .setAppearance(Appearance()        .setMaterial(Material()         .setDEF("GreenMaterial") 
-         .setDiffuseColor([0,1,1]) 
-         .setEmissiveColor([0.8,0,0]) 
-         .setTransparency(0.1) 
-        ) 
-        .setTexture(ImageTexture()         .setUrl(["images/X3dJavaSceneAccessInterfaceSaiLibrary.png","http://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png"]) 
-        ) 
-       ) 
-       .setGeometry(Box()        .setDEF("test-NMTOKEN_regex.0123456789") 
-        .setClass("untextured") 
-       ) 
-]      ) 
-]     ) 
-]    ) 
-    .addChildren([Shape()     .setDEF("LineShape") 
-     .setAppearance(Appearance()      .setMaterial(Material()       .setEmissiveColor([0.6,0.19607843,0.8]) 
-      ) 
-     ) 
-     .setGeometry(IndexedLineSet()# Coordinate 3-tuple point count: 6 
-      .setCoord(Coordinate(coordIndex = [0,1,2,3,4,0])       .setPoint([0,1.5,0,2,1.5,0,2,1.5,-2,-2,1.5,-2,-2,1.5,0,0,1.5,0]) 
-      ) 
-     ) 
-]    ) 
-    .addChildren([PositionInterpolator()     .setDEF("BoxPathAnimator") 
-     .setKey([0,0.125,0.375,0.625,0.875,1]) 
-     .setKeyValue([0,1.5,0,2,1.5,0,2,1.5,-2,-2,1.5,-2,-2,1.5,0,0,1.5,0]) 
-]    ) 
-    .addChildren([TimeSensor()     .setDEF("OrbitClock") 
-     .setCycleInterval(8.0) 
-     .setLoop(True) 
-]    ) 
-    .addChildren([ROUTE()     .setFromField("fraction_changed") 
-     .setFromNode("OrbitClock") 
-     .setToField("set_fraction") 
-     .setToNode("BoxPathAnimator") 
-]    ) 
-    .addChildren([ROUTE()     .setFromField("value_changed") 
-     .setFromNode("BoxPathAnimator") 
-     .setToField("set_translation") 
-     .setToNode("LogoGeometryTransform") 
-]    ) 
-    .addChildren([Transform()     .setDEF("TextTransform") 
-     .setTranslation([0,-1.5,0]) 
-     .addChildren([Shape()      .setAppearance(Appearance()       .setMaterial(Material()        .setUSE("GreenMaterial") 
-       ) 
-      ) 
-      .setGeometry(Text()       .setString(["X3D Java","SAI Library","X3DJSAIL"]) 
-# Comment example A, plain quotation marks: He said, \"Immel did it!\" 
-# Comment example B, XML character entities: He said, &quot;Immel did it!&quot; 
-       .setMetadata(MetadataSet()        .setName("EscapedQuotationMarksMetadataSet") 
-        .setValue(MetadataString()         .setName("quotesTestC") 
-         .setValue(["MFString example C, backslash-escaped quotes: He said, \"Immel did it!\""]) 
-        ) 
-        .setValue(MetadataString()         .setName("extraChildTest") 
-         .setValue(["checks MetadataSetObject addValue() method"]) 
-        ) 
-       ) 
-       .setFontStyle(FontStyle()       ) 
-      ) 
-]     ) 
-     .addChildren([Collision()# test containerField='proxy' 
-      .setProxy(Shape()       .setDEF("ProxyShape") 
-# alternative XML encoding: Text string='\"One, Two, Comment\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"' 
-# alternative XML encoding: Text string='\"One, Two, Comment\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\" \"\"' 
-# alternative Java source: .setString(new String [] {\"One, Two, Comment\", \"\", \"He said, \\\"Immel did it!\\\"\"}) 
-# reference: http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html 
-       .setGeometry(Text()        .setString(["One, Two, Text","","He said, \"Immel did it!\" \"\""]) 
-       ) 
-      ) 
-]     ) 
-# It's a beautiful world 
-# ... for you! 
-# https://en.wikipedia.org/wiki/Beautiful_World_(Devo_song) 
-]    ) 
-# repeatedly spin 180 degrees as a readable special effect 
-    .addChildren([OrientationInterpolator()     .setDEF("SpinInterpolator") 
-     .setKey([0,0.5,1]) 
-     .setKeyValue([0,1,0,4.712389,0,1,0,0,0,1,0,1.5707964]) 
-]    ) 
-    .addChildren([TimeSensor()     .setDEF("SpinClock") 
-     .setCycleInterval(5.0) 
-     .setLoop(True) 
-]    ) 
-    .addChildren([ROUTE()     .setFromField("fraction_changed") 
-     .setFromNode("SpinClock") 
-     .setToField("set_fraction") 
-     .setToNode("SpinInterpolator") 
-]    ) 
-    .addChildren([ROUTE()     .setFromField("value_changed") 
-     .setFromNode("SpinInterpolator") 
-     .setToField("rotation") 
-     .setToNode("TextTransform") 
-]    ) 
-    .addChildren([Group()     .setDEF("BackgroundGroup") 
-     .addChildren([Background()      .setDEF("GradualBackground") 
-]     ) 
-     .addChildren([Script()      .setDEF("colorTypeConversionScript") 
-      .addField(field()       .setName("colorInput") 
-       .setAccessType("inputOnly") 
-       .setType("SFColor") 
-      ) 
-      .addField(field()       .setName("colorsOutput") 
-       .setAccessType("outputOnly") 
-       .setType("MFColor") 
-      ) 
-.setSourceCode('''\n"+
+import X3Dpackage
+
+
+X3D0 = (X3Dpackage.X3D().setProfile("Immersive").setVersion("3.3")
+      # x3dVersionComparisonTest for this model: supportsX3dVersion(X3DObject.VERSION_3_0)=true 
+
+      .setHead(X3Dpackage.head()
+        # comment #1 
+
+        # comment #2 
+
+        # comment #3 
+
+        # comment #4 
+
+        .addComponent(X3Dpackage.component().setName("Navigation").setLevel(3))
+        .addComponent(X3Dpackage.component().setName("Layering").setLevel(1))
+        .addComponent(X3Dpackage.component().setName("Shaders").setLevel(1))
+        .addComponent(X3Dpackage.component().setName("CADGeometry").setLevel(2))
+        .addComponent(X3Dpackage.component().setName("DIS").setLevel(2))
+        .addComponent(X3Dpackage.component().setName("H-Anim").setLevel(1))
+        .addUnit(X3Dpackage.unit(setCategory = "angle").setName("AngleUnitConversion").setConversionFactor(1.0))
+        .addUnit(X3Dpackage.unit(setCategory = "length").setName("LengthUnitConversion").setConversionFactor(1.0))
+        .addUnit(X3Dpackage.unit(setCategory = "force").setName("ForceFromPoundsToNewtons").setConversionFactor(4.4482))
+        .addMeta(X3Dpackage.meta().setContent("HelloWorldProgramOutput.x3d").setName("title"))
+        .addMeta(X3Dpackage.meta().setContent("continued development and testing in progress").setName("info"))
+        .addMeta(X3Dpackage.meta().setContent("Example HelloWorldProgram creates an X3D model using the X3D Java Scene Access Interface Library (X3DJSAIL)").setName("description"))
+        .addMeta(X3Dpackage.meta().setContent("http://www.web3d.org/specifications/java/X3DJSAIL.html").setName("reference"))
+        .addMeta(X3Dpackage.meta().setContent("HelloWorldProgramOutput.java").setName("generator"))
+        .addMeta(X3Dpackage.meta().setContent("6 September 2016").setName("created"))
+        .addMeta(X3Dpackage.meta().setContent("19 June 2019").setName("modified"))
+        .addMeta(X3Dpackage.meta().setContent("X3D Java Scene Access Interface Library (X3DJSAIL)").setName("generator"))
+        .addMeta(X3Dpackage.meta().setContent("http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java").setName("generator"))
+        .addMeta(X3Dpackage.meta().setContent("Netbeans http://www.netbeans.org").setName("generator"))
+        .addMeta(X3Dpackage.meta().setContent("Don Brutzman").setName("creator"))
+        .addMeta(X3Dpackage.meta().setContent("https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/java/examples/HelloWorldProgramOutput.x3d").setName("reference"))
+        .addMeta(X3Dpackage.meta().setContent("Console output, ClassicVRML encoding, VRML97 encoding and pretty-print documentation:").setName("reference"))
+        .addMeta(X3Dpackage.meta().setContent("HelloWorldProgramOutput.txt").setName("reference"))
+        .addMeta(X3Dpackage.meta().setContent("HelloWorldProgramOutput.x3dv").setName("reference"))
+        .addMeta(X3Dpackage.meta().setContent("HelloWorldProgramOutput.wrl").setName("reference"))
+        .addMeta(X3Dpackage.meta().setContent("HelloWorldProgramOutput.html").setName("reference"))
+        .addMeta(X3Dpackage.meta().setContent("https://savage.nps.edu/X3dValidator?url=http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d").setName("reference"))
+        .addMeta(X3Dpackage.meta().setContent("http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d").setName("identifier"))
+        .addMeta(X3Dpackage.meta().setContent("../license.html").setName("license")))
+      .setScene(X3Dpackage.Scene()
+        .addChildren(X3Dpackage.ViewpointGroup().setDescription("Available viewpoints")
+          .addChildren(X3Dpackage.Viewpoint().setDEF("DefaultView").setDescription("Hello X3DJSAIL"))
+          .addChildren(X3Dpackage.Viewpoint().setDEF("TopDownView").setDescription("top-down view from above").setOrientation([1,0,0,-1.570796]).setPosition([0,100,0])))
+        .addChildren(X3Dpackage.NavigationInfo().setAvatarSize([0.25,1.6,0.75]).setTransitionType(["LINEAR"]).setType(["EXAMINE","FLY","ANY"]))
+        .addChildren(X3Dpackage.WorldInfo().setDEF("WorldInfoDEF").setTitle("HelloWorldProgram produced by X3D Java SAI Library (X3DJSAIL)"))
+        .addChildren(X3Dpackage.WorldInfo().setUSE("WorldInfoDEF"))
+        .addChildren(X3Dpackage.WorldInfo().setUSE("WorldInfoDEF"))
+        .addChildren(X3Dpackage.MetadataString().setDEF("scene.addChildMetadata").setName("test").setValue(["Top-level root Metadata node beneath Scene needs to be one of '-children' in JSON encoding"]))
+        .addLayerSet(X3Dpackage.LayerSet(setOrder = [0]).setDEF("scene.addChildLayerSetTest"))
+        .addChildren(X3Dpackage.Transform().setDEF("LogoGeometryTransform").setTranslation([0,1.5,0])
+          .addChildren(X3Dpackage.Anchor().setDescription("select for X3D Java SAI Library (X3DJSAIL) description").setUrl(["../X3DJSAIL.html","http://www.web3d.org/specifications/java/X3DJSAIL.html"])
+            .addChildren(X3Dpackage.Shape().setDEF("BoxShape")
+              .setAppearance(X3Dpackage.Appearance()
+                .setMaterial(X3Dpackage.Material().setDEF("GreenMaterial").setDiffuseColor([0,1,1]).setEmissiveColor([0.8,0,0]).setTransparency(0.1))
+                .setTexture(X3Dpackage.ImageTexture().setUrl(["images/X3dJavaSceneAccessInterfaceSaiLibrary.png","http://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png"])))
+              .setGeometry(X3Dpackage.Box().setDEF("test-NMTOKEN_regex.0123456789").setClass("untextured")))))
+        .addChildren(X3Dpackage.Shape().setDEF("LineShape")
+          .setAppearance(X3Dpackage.Appearance()
+            .setMaterial(X3Dpackage.Material().setEmissiveColor([0.6,0.19607843,0.8])))
+          .setGeometry(X3Dpackage.IndexedLineSet(setCoordIndex = [0,1,2,3,4,0])
+            # Coordinate 3-tuple point count: 6 
+
+            .setCoord(X3Dpackage.Coordinate().setPoint([0,1.5,0,2,1.5,0,2,1.5,-2,-2,1.5,-2,-2,1.5,0,0,1.5,0]))))
+        .addChildren(X3Dpackage.PositionInterpolator().setDEF("BoxPathAnimator").setKey([0,0.125,0.375,0.625,0.875,1]).setKeyValue([0,1.5,0,2,1.5,0,2,1.5,-2,-2,1.5,-2,-2,1.5,0,0,1.5,0]))
+        .addChildren(X3Dpackage.TimeSensor().setDEF("OrbitClock").setCycleInterval(8.0).setLoop(True))
+        .addChildren(X3Dpackage.ROUTE().setFromField("fraction_changed").setFromNode("OrbitClock").setToField("set_fraction").setToNode("BoxPathAnimator"))
+        .addChildren(X3Dpackage.ROUTE().setFromField("value_changed").setFromNode("BoxPathAnimator").setToField("set_translation").setToNode("LogoGeometryTransform"))
+        .addChildren(X3Dpackage.Transform().setDEF("TextTransform").setTranslation([0,-1.5,0])
+          .addChildren(X3Dpackage.Shape()
+            .setAppearance(X3Dpackage.Appearance()
+              .setMaterial(X3Dpackage.Material().setUSE("GreenMaterial")))
+            .setGeometry(X3Dpackage.Text().setString(["X3D Java","SAI Library","X3DJSAIL"])
+              # Comment example A, plain quotation marks: He said, \"Immel did it!\" 
+
+              # Comment example B, XML character entities: He said, &quot;Immel did it!&quot; 
+
+              .setMetadata(X3Dpackage.MetadataSet().setName("EscapedQuotationMarksMetadataSet")
+                .addValue(X3Dpackage.MetadataString().setName("quotesTestC").setValue(["MFString example C, backslash-escaped quotes: He said, \"Immel did it!\""]))
+                .addValue(X3Dpackage.MetadataString().setName("extraChildTest").setValue(["checks MetadataSetObject addValue() method"])))
+              .setFontStyle(X3Dpackage.FontStyle(setFamily = ["SERIF"], setJustify = ["MIDDLE","MIDDLE"]))))
+          .addChildren(X3Dpackage.Collision()
+            # test containerField='proxy' 
+
+            .setProxy(X3Dpackage.Shape().setDEF("ProxyShape")
+              # alternative XML encoding: Text string='\"One, Two, Comment\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"' 
+
+              # alternative XML encoding: Text string='\"One, Two, Comment\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\" \"\"' 
+
+              # alternative Java source: .setString(new String [] {\"One, Two, Comment\", \"\", \"He said, \\\"Immel did it!\\\"\"}) 
+
+              # reference: http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html 
+
+              .setGeometry(X3Dpackage.Text().setString(["One, Two, Text","","He said, \"Immel did it!\" \"\""]))))
+          # It's a beautiful world 
+
+          # ... for you! 
+
+          # https://en.wikipedia.org/wiki/Beautiful_World_(Devo_song) 
+
+          )
+        # repeatedly spin 180 degrees as a readable special effect 
+
+        .addChildren(X3Dpackage.OrientationInterpolator().setDEF("SpinInterpolator").setKey([0,0.5,1]).setKeyValue([0,1,0,4.712389,0,1,0,0,0,1,0,1.5707964]))
+        .addChildren(X3Dpackage.TimeSensor().setDEF("SpinClock").setCycleInterval(5.0).setLoop(True))
+        .addChildren(X3Dpackage.ROUTE().setFromField("fraction_changed").setFromNode("SpinClock").setToField("set_fraction").setToNode("SpinInterpolator"))
+        .addChildren(X3Dpackage.ROUTE().setFromField("value_changed").setFromNode("SpinInterpolator").setToField("rotation").setToNode("TextTransform"))
+        .addChildren(X3Dpackage.Group().setDEF("BackgroundGroup")
+          .addChildren(X3Dpackage.Background().setDEF("GradualBackground"))
+          .addChildren(X3Dpackage.Script().setDEF("colorTypeConversionScript")
+            .addField(X3Dpackage.field().setName("colorInput").setAccessType("inputOnly").setType("SFColor"))
+            .addField(X3Dpackage.field().setName("colorsOutput").setAccessType("outputOnly").setType("MFColor")).setSourceCode('''\n"+
 "ecmascript:\n"+
 "\n"+
 "function colorInput (eventValue) // Example source code\n"+
@@ -245,205 +122,92 @@ X3D0 = (X3D()
 "// Browser.print('colorInput=' + eventValue + ', colorsOutput=' + colorsOutput + '\\n');\n"+
 "}\n"+
 "''')
-]     ) 
-     .addChildren([ColorInterpolator()      .setDEF("ColorAnimator") 
-      .setKey([0,0.5,1]) 
-      .setKeyValue([0.9411765,1,1,0.29411766,0,0.50980395,0.9411765,1,1]) 
-# AZURE to INDIGO and back again 
-]     ) 
-     .addChildren([TimeSensor()      .setDEF("ColorClock") 
-      .setCycleInterval(60.0) 
-      .setLoop(True) 
-]     ) 
-     .addChildren([ROUTE()      .setFromField("colorsOutput") 
-      .setFromNode("colorTypeConversionScript") 
-      .setToField("skyColor") 
-      .setToNode("GradualBackground") 
-]     ) 
-     .addChildren([ROUTE()      .setFromField("value_changed") 
-      .setFromNode("ColorAnimator") 
-      .setToField("colorInput") 
-      .setToNode("colorTypeConversionScript") 
-]     ) 
-     .addChildren([ROUTE()      .setFromField("fraction_changed") 
-      .setFromNode("ColorClock") 
-      .setToField("set_fraction") 
-      .setToNode("ColorAnimator") 
-]     ) 
-]    ) 
-    .addChildren([ProtoDeclare()     .setName("ArtDeco01Material") 
-     .setAppinfo("tooltip: ArtDeco01Material prototype is a Material node") 
-     .setProtoInterface(ProtoInterface()      .addField(field()       .setName("description") 
-       .setAccessType("inputOutput") 
-       .setAppinfo("tooltip for descriptionField") 
-       .setType("SFString") 
-       .setValue("ArtDeco01Material prototype is a Material node") 
-      ) 
-      .addField(field()       .setName("enabled") 
-       .setAccessType("inputOutput") 
-       .setType("SFBool") 
-       .setValue("true") 
-      ) 
-     ) 
-     .setProtoBody(ProtoBody()# Initial node of ProtoBody determines prototype node type 
-      .addChildren([Material()       .setAmbientIntensity(0.25) 
-       .setDiffuseColor([0.282435,0.085159,0.134462]) 
-       .setShininess(0.127273) 
-       .setSpecularColor([0.276305,0.11431,0.139857]) 
-]      ) 
-# [HelloWorldProgram diagnostic] should be connected to scene graph: artDeco01ProtoDeclare.getNodeType()=\"Material\" 
-# presence of follow-on TouchSensor shows that additional nodes are allowed in ProtoBody after initial node, regardless of node types 
-      .addChildren([TouchSensor()       .setDescription("within ProtoBody") 
-       .setIS(IS()        .addConnect(connect()         .setNodeField("description") 
-         .setProtoField("description") 
-        ) 
-        .addConnect(connect()         .setNodeField("enabled") 
-         .setProtoField("enabled") 
-        ) 
-       ) 
-]      ) 
-     ) 
-]    ) 
-    .addChildren([ExternProtoDeclare()     .setName("ArtDeco02Material") 
-     .setAppinfo("this is a different Material node") 
-     .setUrl(["http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"]) 
-# [HelloWorldProgram diagnostic] artDeco02ExternProtoDeclare.getNodeType()=\"ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time. TODO X3DJSAIL needs to add further capability that retrieves the ExternProtoDeclare file.\" 
-     .addField(field()      .setName("description") 
-      .setAccessType("inputOutput") 
-      .setAppinfo("tooltip for descriptionField") 
-      .setType("SFString") 
-     ) 
-]    ) 
-# Tested ArtDeco01ProtoInstance, ArtDeco02ProtoInstance for improper node type when ProtoInstance is added in wrong place 
-    .addChildren([Shape()     .setDEF("TestShape1") 
-     .setAppearance(Appearance()      .setDEF("TestAppearance1") 
-# ArtDeco01Material prototype goes here... TODO ensure setContainerField is handled in exported Java 
-      .setMaterial(ProtoInstance()       .setName("ArtDeco01Material") 
-# [HelloWorldProgram diagnostic] ArtDeco01ProtoInstance.getNodeType()=\"Material\" 
-       .addFieldValue(fieldValue()        .setName("description") 
-        .setValue("ArtDeco01Material can substitute for a Material node") 
-       ) 
-      ) 
-     ) 
-     .setGeometry(Sphere()     ) 
-]    ) 
-    .addChildren([Shape()     .setDEF("TestShape2") 
-     .setAppearance(Appearance()      .setDEF("TestAppearance2") 
-# ArtDeco02Material prototype goes here... TODO ensure setContainerField is handled in exported Java 
-      .setMaterial(ProtoInstance()       .setDEF("ArtDeco02MaterialDEF") 
-       .setName("ArtDeco02Material") 
-# [HelloWorldProgram diagnostic] ArtDeco02ProtoInstance.getNodeType()=\"ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time. TODO X3DJSAIL needs to add further capability that retrieves the ExternProtoDeclare file.\" 
-       .addFieldValue(fieldValue()        .setName("description") 
-        .setValue("ArtDeco02Material can substitute for another Material node") 
-       ) 
-      ) 
-     ) 
-     .setGeometry(Cone()     ) 
-]    ) 
-    .addChildren([Shape()     .setDEF("TestShape3") 
-     .setAppearance(Appearance()      .setDEF("TestAppearance3") 
-# ArtDeco02Material ProtoInstance USE goes here. Note that name field is NOT defined as part of ProtoInstance USE. 
-      .setMaterial(ProtoInstance()       .setUSE("ArtDeco02MaterialDEF") 
-      ) 
-     ) 
-     .setGeometry(Cylinder()     ) 
-]    ) 
-    .addChildren([Inline()     .setDEF("inlineSceneDef") 
-     .setUrl(["someOtherScene.x3d","http://www.web3d.org/specifications/java/examples/someOtherScene.x3d"]) 
-]    ) 
-    .addChildren([IMPORT()     .setAS("WorldInfoDEF2") 
-     .setImportedDEF("WorldInfoDEF") 
-     .setInlineDEF("inlineSceneDef") 
-]    ) 
-    .addChildren([EXPORT()     .setAS("WorldInfoDEF3") 
-     .setLocalDEF("WorldInfoDEF") 
-]    ) 
-    .addChildren([ProtoDeclare()     .setName("MaterialModulator") 
-     .setAppinfo("mimic a Material node and modulate fields as an animation effect") 
-     .setDocumentation("http://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html") 
-     .setProtoInterface(ProtoInterface()      .addField(field()       .setName("enabled") 
-       .setAccessType("inputOutput") 
-       .setType("SFBool") 
-       .setValue("true") 
-      ) 
-      .addField(field()       .setName("diffuseColor") 
-       .setAccessType("inputOutput") 
-       .setType("SFColor") 
-       .setValue("0 0 0") 
-      ) 
-      .addField(field()       .setName("emissiveColor") 
-       .setAccessType("inputOutput") 
-       .setType("SFColor") 
-       .setValue("0.05 0.05 0.5") 
-      ) 
-      .addField(field()       .setName("specularColor") 
-       .setAccessType("inputOutput") 
-       .setType("SFColor") 
-       .setValue("0 0 0") 
-      ) 
-      .addField(field()       .setName("transparency") 
-       .setAccessType("inputOutput") 
-       .setType("SFFloat") 
-       .setValue("0.0") 
-      ) 
-      .addField(field()       .setName("shininess") 
-       .setAccessType("inputOutput") 
-       .setType("SFFloat") 
-       .setValue("0.0") 
-      ) 
-      .addField(field()       .setName("ambientIntensity") 
-       .setAccessType("inputOutput") 
-       .setType("SFFloat") 
-       .setValue("0.0") 
-      ) 
-     ) 
-     .setProtoBody(ProtoBody()      .addChildren([Material()       .setDEF("MaterialNode") 
-       .setIS(IS()        .addConnect(connect()         .setNodeField("diffuseColor") 
-         .setProtoField("diffuseColor") 
-        ) 
-        .addConnect(connect()         .setNodeField("emissiveColor") 
-         .setProtoField("emissiveColor") 
-        ) 
-        .addConnect(connect()         .setNodeField("specularColor") 
-         .setProtoField("specularColor") 
-        ) 
-        .addConnect(connect()         .setNodeField("transparency") 
-         .setProtoField("transparency") 
-        ) 
-        .addConnect(connect()         .setNodeField("shininess") 
-         .setProtoField("shininess") 
-        ) 
-        .addConnect(connect()         .setNodeField("ambientIntensity") 
-         .setProtoField("ambientIntensity") 
-        ) 
-       ) 
-]      ) 
-# Only first node (the node type) is renderable, others are along for the ride 
-      .addChildren([Script()       .setDEF("MaterialModulatorScript") 
-       .addField(field()        .setName("enabled") 
-        .setAccessType("inputOutput") 
-        .setType("SFBool") 
-       ) 
-       .addField(field()        .setName("diffuseColor") 
-        .setAccessType("inputOutput") 
-        .setType("SFColor") 
-       ) 
-       .addField(field()        .setName("newColor") 
-        .setAccessType("outputOnly") 
-        .setType("SFColor") 
-       ) 
-       .addField(field()        .setName("clockTrigger") 
-        .setAccessType("inputOnly") 
-        .setType("SFTime") 
-       ) 
-       .setIS(IS()        .addConnect(connect()         .setNodeField("enabled") 
-         .setProtoField("enabled") 
-        ) 
-        .addConnect(connect()         .setNodeField("diffuseColor") 
-         .setProtoField("diffuseColor") 
-        ) 
-       ) 
-.setSourceCode('''\n"+
+)
+          .addChildren(X3Dpackage.ColorInterpolator().setDEF("ColorAnimator").setKey([0,0.5,1]).setKeyValue([0.9411765,1,1,0.29411766,0,0.50980395,0.9411765,1,1])
+            # AZURE to INDIGO and back again 
+
+            )
+          .addChildren(X3Dpackage.TimeSensor().setDEF("ColorClock").setCycleInterval(60.0).setLoop(True))
+          .addChildren(X3Dpackage.ROUTE().setFromField("colorsOutput").setFromNode("colorTypeConversionScript").setToField("skyColor").setToNode("GradualBackground"))
+          .addChildren(X3Dpackage.ROUTE().setFromField("value_changed").setFromNode("ColorAnimator").setToField("colorInput").setToNode("colorTypeConversionScript"))
+          .addChildren(X3Dpackage.ROUTE().setFromField("fraction_changed").setFromNode("ColorClock").setToField("set_fraction").setToNode("ColorAnimator")))
+        .addChildren(X3Dpackage.ProtoDeclare().setName("ArtDeco01Material").setAppinfo("tooltip: ArtDeco01Material prototype is a Material node")
+          .setProtoInterface(X3Dpackage.ProtoInterface()
+            .addField(X3Dpackage.field().setName("description").setAccessType("inputOutput").setAppinfo("tooltip for descriptionField").setType("SFString").setValue("ArtDeco01Material prototype is a Material node"))
+            .addField(X3Dpackage.field().setName("enabled").setAccessType("inputOutput").setType("SFBool").setValue("true")))
+          .setProtoBody(X3Dpackage.ProtoBody()
+            # Initial node of ProtoBody determines prototype node type 
+
+            .addChildren(X3Dpackage.Material().setAmbientIntensity(0.25).setDiffuseColor([0.282435,0.085159,0.134462]).setShininess(0.127273).setSpecularColor([0.276305,0.11431,0.139857]))
+            # [HelloWorldProgram diagnostic] should be connected to scene graph: artDeco01ProtoDeclare.getNodeType()=\"Material\" 
+
+            # presence of follow-on TouchSensor shows that additional nodes are allowed in ProtoBody after initial node, regardless of node types 
+
+            .addChildren(X3Dpackage.TouchSensor().setDescription("within ProtoBody")
+              .setIS(X3Dpackage.IS()
+                .addConnect(X3Dpackage.connect().setNodeField("description").setProtoField("description"))
+                .addConnect(X3Dpackage.connect().setNodeField("enabled").setProtoField("enabled"))))))
+        .addChildren(X3Dpackage.ExternProtoDeclare().setName("ArtDeco02Material").setAppinfo("this is a different Material node").setUrl(["http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"])
+          # [HelloWorldProgram diagnostic] artDeco02ExternProtoDeclare.getNodeType()=\"ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time. TODO X3DJSAIL needs to add further capability that retrieves the ExternProtoDeclare file.\" 
+
+          .addField(X3Dpackage.field().setName("description").setAccessType("inputOutput").setAppinfo("tooltip for descriptionField").setType("SFString")))
+        # Tested ArtDeco01ProtoInstance, ArtDeco02ProtoInstance for improper node type when ProtoInstance is added in wrong place 
+
+        .addChildren(X3Dpackage.Shape().setDEF("TestShape1")
+          .setAppearance(X3Dpackage.Appearance().setDEF("TestAppearance1")
+            # ArtDeco01Material prototype goes here... TODO ensure setContainerField is handled in exported Java 
+
+            .setMaterial(X3Dpackage.ProtoInstance().setName("ArtDeco01Material")
+              # [HelloWorldProgram diagnostic] ArtDeco01ProtoInstance.getNodeType()=\"Material\" 
+
+              .addFieldValue(X3Dpackage.fieldValue().setName("description").setValue("ArtDeco01Material can substitute for a Material node"))))
+          .setGeometry(X3Dpackage.Sphere(setRadius = 0.001)))
+        .addChildren(X3Dpackage.Shape().setDEF("TestShape2")
+          .setAppearance(X3Dpackage.Appearance().setDEF("TestAppearance2")
+            # ArtDeco02Material prototype goes here... TODO ensure setContainerField is handled in exported Java 
+
+            .setMaterial(X3Dpackage.ProtoInstance().setDEF("ArtDeco02MaterialDEF").setName("ArtDeco02Material")
+              # [HelloWorldProgram diagnostic] ArtDeco02ProtoInstance.getNodeType()=\"ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time. TODO X3DJSAIL needs to add further capability that retrieves the ExternProtoDeclare file.\" 
+
+              .addFieldValue(X3Dpackage.fieldValue().setName("description").setValue("ArtDeco02Material can substitute for another Material node"))))
+          .setGeometry(X3Dpackage.Cone(setBottomRadius = 0.001, setHeight = 0.001)))
+        .addChildren(X3Dpackage.Shape().setDEF("TestShape3")
+          .setAppearance(X3Dpackage.Appearance().setDEF("TestAppearance3")
+            # ArtDeco02Material ProtoInstance USE goes here. Note that name field is NOT defined as part of ProtoInstance USE. 
+
+            .setMaterial(X3Dpackage.ProtoInstance().setUSE("ArtDeco02MaterialDEF")))
+          .setGeometry(X3Dpackage.Cylinder(setHeight = 0.001, setRadius = 0.001)))
+        .addChildren(X3Dpackage.Inline().setDEF("inlineSceneDef").setUrl(["someOtherScene.x3d","http://www.web3d.org/specifications/java/examples/someOtherScene.x3d"]))
+        .addChildren(X3Dpackage.IMPORT().setAS("WorldInfoDEF2").setImportedDEF("WorldInfoDEF").setInlineDEF("inlineSceneDef"))
+        .addChildren(X3Dpackage.EXPORT().setAS("WorldInfoDEF3").setLocalDEF("WorldInfoDEF"))
+        .addChildren(X3Dpackage.ProtoDeclare().setName("MaterialModulator").setAppinfo("mimic a Material node and modulate fields as an animation effect").setDocumentation("http://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html")
+          .setProtoInterface(X3Dpackage.ProtoInterface()
+            .addField(X3Dpackage.field().setName("enabled").setAccessType("inputOutput").setType("SFBool").setValue("true"))
+            .addField(X3Dpackage.field().setName("diffuseColor").setAccessType("inputOutput").setType("SFColor").setValue("0 0 0"))
+            .addField(X3Dpackage.field().setName("emissiveColor").setAccessType("inputOutput").setType("SFColor").setValue("0.05 0.05 0.5"))
+            .addField(X3Dpackage.field().setName("specularColor").setAccessType("inputOutput").setType("SFColor").setValue("0 0 0"))
+            .addField(X3Dpackage.field().setName("transparency").setAccessType("inputOutput").setType("SFFloat").setValue("0.0"))
+            .addField(X3Dpackage.field().setName("shininess").setAccessType("inputOutput").setType("SFFloat").setValue("0.0"))
+            .addField(X3Dpackage.field().setName("ambientIntensity").setAccessType("inputOutput").setType("SFFloat").setValue("0.0")))
+          .setProtoBody(X3Dpackage.ProtoBody()
+            .addChildren(X3Dpackage.Material().setDEF("MaterialNode")
+              .setIS(X3Dpackage.IS()
+                .addConnect(X3Dpackage.connect().setNodeField("diffuseColor").setProtoField("diffuseColor"))
+                .addConnect(X3Dpackage.connect().setNodeField("emissiveColor").setProtoField("emissiveColor"))
+                .addConnect(X3Dpackage.connect().setNodeField("specularColor").setProtoField("specularColor"))
+                .addConnect(X3Dpackage.connect().setNodeField("transparency").setProtoField("transparency"))
+                .addConnect(X3Dpackage.connect().setNodeField("shininess").setProtoField("shininess"))
+                .addConnect(X3Dpackage.connect().setNodeField("ambientIntensity").setProtoField("ambientIntensity"))))
+            # Only first node (the node type) is renderable, others are along for the ride 
+
+            .addChildren(X3Dpackage.Script().setDEF("MaterialModulatorScript")
+              .addField(X3Dpackage.field().setName("enabled").setAccessType("inputOutput").setType("SFBool"))
+              .addField(X3Dpackage.field().setName("diffuseColor").setAccessType("inputOutput").setType("SFColor"))
+              .addField(X3Dpackage.field().setName("newColor").setAccessType("outputOnly").setType("SFColor"))
+              .addField(X3Dpackage.field().setName("clockTrigger").setAccessType("inputOnly").setType("SFTime"))
+              .setIS(X3Dpackage.IS()
+                .addConnect(X3Dpackage.connect().setNodeField("enabled").setProtoField("enabled"))
+                .addConnect(X3Dpackage.connect().setNodeField("diffuseColor").setProtoField("diffuseColor"))).setSourceCode('''\n"+
 "ecmascript:\n"+
 "function initialize ()\n"+
 "{\n"+
@@ -468,137 +232,132 @@ X3D0 = (X3D()
 "	}\n"+
 "}\n"+
 "''')
-]      ) 
-     ) 
-]    ) 
-# Test success: declarative statement createDeclarativeShapeTests() 
-    .addChildren([Group()     .setDEF("DeclarativeGroupExample") 
-     .addChildren([Shape()      .setMetadata(MetadataString()       .setDEF("FindableMetadataStringTest") 
-       .setName("findThisNameValue") 
-       .setValue(["test case"]) 
-      ) 
-      .setAppearance(Appearance()       .setDEF("DeclarativeAppearanceExample") 
-# DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance 
-       .setMaterial(ProtoInstance()        .setDEF("MyMaterialModulator") 
-        .setName("MaterialModulator") 
-       ) 
-      ) 
-      .setGeometry(Cone()      ) 
-]     ) 
-# Test success: declarativeGroup.addChild() singleton pipeline method 
-]    ) 
-# Test success: declarative statement addChild() 
-# Test success: x3dModel.findNodeByDEF(DeclarativeAppearanceExample) = <Appearance DEF='DeclarativeAppearanceExample'/> i.e. <Appearance DEF='DeclarativeAppearanceExample'> <!- - DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance - -> <ProtoInstance DEF='MyMaterialModulator' name='MaterialModulator' containerField='material'/> </Appearance> 
-# Test success: x3dModel.findElementByNameValue(findThisNameValue) = <MetadataString DEF='FindableMetadataStringTest' name='findThisNameValue' value='\"test case\"'/> 
-# Test success: x3dModel.findElementByNameValue(\"ArtDeco01Material\", \"ProtoDeclare\") found 
-# Test success: x3dModel.findElementByNameValue(\"MaterialModulator\", \"ProtoDeclare\") found 
-# Test success: x3dModel.findElementByNameValue(\"MaterialModulator\", \"ProtoInstance\") found 
-    .addChildren([Group()     .setDEF("TestFieldObjectsGroup") 
-# testFieldObjects() results 
-# SFBool default=true, true=true, false=false, negate()=true 
-# MFBool default=, initial=true false true, negate()=false true false 
-# SFFloat default=0.0, initial=1.0, setValue(2)=2.0, setValue(3.0f)=3.0, setValue(4.0)=4.0 
-# MFFloat default=, initial=1 2 3, append(5)=1 2 3 5, inserts(3,4)(0,0)=0 1 2 3 4 5, append(6)=0 1 2 3 4 5 6, size()=7 
-# ... get1Value[3]=3.0, remove[1]=0 2 3 4 5 6, set1Value(0,10)=10 2 3 4 5 6, multiply(2)=20 4 6 8 10 12, clear= 
-# SFVec3f default=0 0 0, initial=1 2 3, setValue=4 5 6, multiply(2)=8 10 12, normalize()=0.45584232 0.5698029 0.68376344, regex matches()=true 
-# regex test SFVec3f().matches(\"1 2 3\")=true, regex test SFVec3f().matches(\"1 2 3 4\")=false, regex test (SFRotationObject.matches(\"0 0 0 0\")=true, failure detecting illegal (zero axis) rotation value 
-]    ) 
-    .addChildren([Sound()     .setLocation([0,1.6,0]) 
-# set sound-ellipsoid location height at 1.6m to match typical avatar height 
-     .setSource(AudioClip()      .setDescription("chimes") 
-      .setUrl(["chimes.wav","http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav"]) 
-# Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d 
-     ) 
-]    ) 
-    .addChildren([Sound()     .setLocation([0,1.6,0]) 
-# set sound-ellipsoid location height at 1.6m to match typical avatar height 
-     .setSource(MovieTexture()      .setDescription("mpgsys.mpg from ConformanceNist suite") 
-      .setUrl(["mpgsys.mpg","http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg"]) 
-# Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d 
-# Expected containerField='source', allowed containerField values=\"texture\" \"source\" \"back\" \"bottom\" \"front\" \"left\" \"right\" \"top\" \"backTexture\" \"bottomTexture\" \"frontTexture\" \"leftTexture\" \"rightTexture\" \"topTexture\" \"watchList\" 
-     ) 
-]    ) 
-# Test success: AnchorObject.isNode()=true, siteAnchor.isNode()=true 
-# Test success: AnchorObject.isStatement()=false, siteAnchor.isStatement()=false 
-# Test success: ROUTEObject.isNode()=false, orbitPositionROUTE.isNode()=false 
-# Test success: ROUTEObject.isStatement()=true, orbitPositionROUTE.isStatement()=true 
-# Test success: CommentsBlock.isNode()=false, testComments.isNode()=false 
-# Test failure: CommentsBlock.isStatement()=true, testComments.isStatement()=true 
-    .addChildren([Shape()     .setDEF("ExtrusionShape") 
-# ExampleExtrusion isCrossSectionClosed()=true, crossSection='[1.0, 1.0, 1.0, -1.0, -1.0, -1.0, -1.0, 1.0, 1.0, 1.0]' 
-# ExampleExtrusion isSpineClosed()=false, spine='[0.0, 0.0, 0.0, 0.0, 1.0, 0.0]' 
-     .setAppearance(Appearance()      .setDEF("TransparentAppearance") 
-      .setMaterial(Material()       .setTransparency(1.0) 
-      ) 
-     ) 
-     .setGeometry(Extrusion()      .setDEF("ExampleExtrusion") 
-     ) 
-]    ) 
-    .addChildren([Group()# Test MFNode children array as an ordered list consisting of comments, statements, ProtoInstance and nodes 
-     .addChildren([ProtoDeclare()      .setName("NewWorldInfo") 
-      .setProtoInterface(ProtoInterface()       .addField(field()        .setName("description") 
-        .setAccessType("initializeOnly") 
-        .setType("SFString") 
-       ) 
-      ) 
-      .setProtoBody(ProtoBody()       .addChildren([WorldInfo()]       ) 
-      ) 
-]     ) 
-     .addChildren([ProtoInstance()      .setDEF("Proto1") 
-      .setName("NewWorldInfo") 
-      .addFieldValue(fieldValue()       .setName("description") 
-       .setValue("testing 1 2 3") 
-      ) 
-]     ) 
-     .addChildren([Group()      .setDEF("Node2") 
-# intentionally empty 
-]     ) 
-     .addChildren([ProtoInstance()      .setDEF("Proto3") 
-      .setName("NewWorldInfo") 
-]     ) 
-     .addChildren([Transform()      .setDEF("Node4") 
-# intentionally empty 
-]     ) 
-# Test satisfactorily creates MFNode children array as an ordered list with mixed content 
-]    ) 
-    .addChildren([ProtoDeclare()     .setName("ShaderProto") 
-     .setProtoBody(ProtoBody()      .addChildren([ProgramShader()]      ) 
-     ) 
-]    ) 
-    .addChildren([Shape()     .setAppearance(Appearance()# Test MFNode shaders array as an ordered list consisting of comments, ProtoInstance and nodes 
-# Test satisfactorily creates MFNode shaders array as an ordered list with mixed content 
-      .addShaders(ProgramShader()       .setDEF("TestShader1") 
-       .addPrograms(ShaderProgram()        .setDEF("TestShader2") 
-       ) 
-      ) 
-      .setShaders(ProtoInstance()       .setDEF("TestShader3") 
-       .setName("ShaderProto") 
-      ) 
-      .addShaders(ComposedShader()       .setDEF("TestShader4") 
-       .addParts(ShaderPart()        .setDEF("TestShader5") 
-       ) 
-      ) 
-     ) 
-]    ) 
-    .addChildren([Transform()     .setDEF("SpecialtyNodes") 
-     .addChildren([CADLayer()      .addChildren([CADAssembly()       .addChildren([CADPart()        .addChildren([CADFace()]        ) 
-]       ) 
-]      ) 
-]     ) 
-     .addChildren([EspduTransform()      .setGeoSystem(["GD","WE"]) 
-]     ) 
-     .addChildren([ReceiverPdu()      .setGeoSystem(["GD","WE"]) 
-]     ) 
-     .addChildren([SignalPdu()      .setGeoSystem(["GD","WE"]) 
-]     ) 
-     .addChildren([TransmitterPdu()      .setGeoSystem(["GD","WE"]) 
-]     ) 
-     .addChildren([DISEntityManager()      .addMapping(DISEntityTypeMapping()      ) 
-]     ) 
-     .addChildren([HAnimHumanoid()      .setDEF("TestHumanoidDEF") 
-      .setName("TestHumanoid") 
-      .setVersion("2.0") 
-]     ) 
-]    ) 
-   ) 
-)
+)))
+        # Test success: declarative statement createDeclarativeShapeTests() 
+
+        .addChildren(X3Dpackage.Group().setDEF("DeclarativeGroupExample")
+          .addChildren(X3Dpackage.Shape()
+            .setMetadata(X3Dpackage.MetadataString().setDEF("FindableMetadataStringTest").setName("findThisNameValue").setValue(["test case"]))
+            .setAppearance(X3Dpackage.Appearance().setDEF("DeclarativeAppearanceExample")
+              # DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance 
+
+              .setMaterial(X3Dpackage.ProtoInstance().setDEF("MyMaterialModulator").setName("MaterialModulator")))
+            .setGeometry(X3Dpackage.Cone(setBottom = False, setBottomRadius = 0.05, setHeight = 0.1)))
+          # Test success: declarativeGroup.addChild() singleton pipeline method 
+
+          )
+        # Test success: declarative statement addChild() 
+
+        # Test success: x3dModel.findNodeByDEF(DeclarativeAppearanceExample) = <Appearance DEF='DeclarativeAppearanceExample'/> i.e. <Appearance DEF='DeclarativeAppearanceExample'> <!- - DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance - -> <ProtoInstance DEF='MyMaterialModulator' name='MaterialModulator' containerField='material'/> </Appearance> 
+
+        # Test success: x3dModel.findElementByNameValue(findThisNameValue) = <MetadataString DEF='FindableMetadataStringTest' name='findThisNameValue' value='\"test case\"'/> 
+
+        # Test success: x3dModel.findElementByNameValue(\"ArtDeco01Material\", \"ProtoDeclare\") found 
+
+        # Test success: x3dModel.findElementByNameValue(\"MaterialModulator\", \"ProtoDeclare\") found 
+
+        # Test success: x3dModel.findElementByNameValue(\"MaterialModulator\", \"ProtoInstance\") found 
+
+        .addChildren(X3Dpackage.Group().setDEF("TestFieldObjectsGroup")
+          # testFieldObjects() results 
+
+          # SFBool default=true, true=true, false=false, negate()=true 
+
+          # MFBool default=, initial=true false true, negate()=false true false 
+
+          # SFFloat default=0.0, initial=1.0, setValue(2)=2.0, setValue(3.0f)=3.0, setValue(4.0)=4.0 
+
+          # MFFloat default=, initial=1 2 3, append(5)=1 2 3 5, inserts(3,4)(0,0)=0 1 2 3 4 5, append(6)=0 1 2 3 4 5 6, size()=7 
+
+          # ... get1Value[3]=3.0, remove[1]=0 2 3 4 5 6, set1Value(0,10)=10 2 3 4 5 6, multiply(2)=20 4 6 8 10 12, clear= 
+
+          # SFVec3f default=0 0 0, initial=1 2 3, setValue=4 5 6, multiply(2)=8 10 12, normalize()=0.45584232 0.5698029 0.68376344, regex matches()=true 
+
+          # regex test SFVec3f().matches(\"1 2 3\")=true, regex test SFVec3f().matches(\"1 2 3 4\")=false, regex test (SFRotationObject.matches(\"0 0 0 0\")=true, failure detecting illegal (zero axis) rotation value 
+
+          )
+        .addChildren(X3Dpackage.Sound().setLocation([0,1.6,0])
+          # set sound-ellipsoid location height at 1.6m to match typical avatar height 
+
+          .setSource(X3Dpackage.AudioClip().setDescription("chimes").setUrl(["chimes.wav","http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav"])
+            # Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d 
+
+            ))
+        .addChildren(X3Dpackage.Sound().setLocation([0,1.6,0])
+          # set sound-ellipsoid location height at 1.6m to match typical avatar height 
+
+          .setSource(X3Dpackage.MovieTexture().setDescription("mpgsys.mpg from ConformanceNist suite").setUrl(["mpgsys.mpg","http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg"])
+            # Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d 
+
+            # Expected containerField='source', allowed containerField values=\"texture\" \"source\" \"back\" \"bottom\" \"front\" \"left\" \"right\" \"top\" \"backTexture\" \"bottomTexture\" \"frontTexture\" \"leftTexture\" \"rightTexture\" \"topTexture\" \"watchList\" 
+
+            ))
+        # Test success: AnchorObject.isNode()=true, siteAnchor.isNode()=true 
+
+        # Test success: AnchorObject.isStatement()=false, siteAnchor.isStatement()=false 
+
+        # Test success: ROUTEObject.isNode()=false, orbitPositionROUTE.isNode()=false 
+
+        # Test success: ROUTEObject.isStatement()=true, orbitPositionROUTE.isStatement()=true 
+
+        # Test success: CommentsBlock.isNode()=false, testComments.isNode()=false 
+
+        # Test failure: CommentsBlock.isStatement()=true, testComments.isStatement()=true 
+
+        .addChildren(X3Dpackage.Shape().setDEF("ExtrusionShape")
+          # ExampleExtrusion isCrossSectionClosed()=true, crossSection='[1.0, 1.0, 1.0, -1.0, -1.0, -1.0, -1.0, 1.0, 1.0, 1.0]' 
+
+          # ExampleExtrusion isSpineClosed()=false, spine='[0.0, 0.0, 0.0, 0.0, 1.0, 0.0]' 
+
+          .setAppearance(X3Dpackage.Appearance().setDEF("TransparentAppearance")
+            .setMaterial(X3Dpackage.Material().setTransparency(1.0)))
+          .setGeometry(X3Dpackage.Extrusion().setDEF("ExampleExtrusion")))
+        .addChildren(X3Dpackage.Group()
+          # Test MFNode children array as an ordered list consisting of comments, statements, ProtoInstance and nodes 
+
+          .addChildren(X3Dpackage.ProtoDeclare().setName("NewWorldInfo")
+            .setProtoInterface(X3Dpackage.ProtoInterface()
+              .addField(X3Dpackage.field().setName("description").setAccessType("initializeOnly").setType("SFString")))
+            .setProtoBody(X3Dpackage.ProtoBody()
+              .addChildren(X3Dpackage.WorldInfo())))
+          .addChildren(X3Dpackage.ProtoInstance().setDEF("Proto1").setName("NewWorldInfo")
+            .addFieldValue(X3Dpackage.fieldValue().setName("description").setValue("testing 1 2 3")))
+          .addChildren(X3Dpackage.Group().setDEF("Node2")
+            # intentionally empty 
+
+            )
+          .addChildren(X3Dpackage.ProtoInstance().setDEF("Proto3").setName("NewWorldInfo"))
+          .addChildren(X3Dpackage.Transform().setDEF("Node4")
+            # intentionally empty 
+
+            )
+          # Test satisfactorily creates MFNode children array as an ordered list with mixed content 
+
+          )
+        .addChildren(X3Dpackage.ProtoDeclare().setName("ShaderProto")
+          .setProtoBody(X3Dpackage.ProtoBody()
+            .addShaders(X3Dpackage.ProgramShader())))
+        .addChildren(X3Dpackage.Shape()
+          .setAppearance(X3Dpackage.Appearance()
+            # Test MFNode shaders array as an ordered list consisting of comments, ProtoInstance and nodes 
+
+            # Test satisfactorily creates MFNode shaders array as an ordered list with mixed content 
+
+            .addShaders(X3Dpackage.ProgramShader().setDEF("TestShader1")
+              .addPrograms(X3Dpackage.ShaderProgram().setDEF("TestShader2")))
+            .addShaders(X3Dpackage.ProtoInstance().setDEF("TestShader3").setName("ShaderProto"))
+            .addShaders(X3Dpackage.ComposedShader().setDEF("TestShader4")
+              .addParts(X3Dpackage.ShaderPart().setDEF("TestShader5")))))
+        .addChildren(X3Dpackage.Transform().setDEF("SpecialtyNodes")
+          .addChildren(X3Dpackage.CADLayer()
+            .addChildren(X3Dpackage.CADAssembly()
+              .addChildren(X3Dpackage.CADPart()
+                .addChildren(X3Dpackage.CADFace()))))
+          .addChildren(X3Dpackage.EspduTransform(setGeoSystem = ["GD","WE"]))
+          .addChildren(X3Dpackage.ReceiverPdu(setGeoSystem = ["GD","WE"]))
+          .addChildren(X3Dpackage.SignalPdu(setGeoSystem = ["GD","WE"]))
+          .addChildren(X3Dpackage.TransmitterPdu(setGeoSystem = ["GD","WE"]))
+          .addChildren(X3Dpackage.DISEntityManager()
+            .addMapping(X3Dpackage.DISEntityTypeMapping()))
+          .addChildren(X3Dpackage.HAnimHumanoid().setDEF("TestHumanoidDEF").setName("TestHumanoid").setVersion("2.0")))))
+
