@@ -199,7 +199,7 @@ MetadataString39.setDEF("scene.addChildMetadata")
 MetadataString39.setName("test")
 MetadataString39.setValue(["Top-level root Metadata node beneath Scene needs to be one of '-children' in JSON encoding"])
 
-Scene31.addChild(MetadataString39)
+Scene31.addMetadata(MetadataString39)
 LayerSet40 = x3dpsail.LayerSet()
 LayerSet40.setDEF("scene.addChildLayerSetTest")
 LayerSet40.setOrder([0])
