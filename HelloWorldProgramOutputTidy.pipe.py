@@ -336,7 +336,7 @@ X3D0 = (X3Dpackage.X3D().setProfile("Immersive").setVersion("3.3")
           )
         .addChildren(X3Dpackage.ProtoDeclare().setName("ShaderProto")
           .setProtoBody(X3Dpackage.ProtoBody()
-            .addShaders(X3Dpackage.ProgramShader())))
+            .addChildren(X3Dpackage.ProgramShader())))
         .addChildren(X3Dpackage.Shape()
           .setAppearance(X3Dpackage.Appearance()
             # Test MFNode shaders array as an ordered list consisting of comments, ProtoInstance and nodes 
